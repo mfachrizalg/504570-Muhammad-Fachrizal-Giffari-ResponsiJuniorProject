@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnEdit = new Button();
+            btnDelete = new Button();
+            btnInsert = new Button();
             label1 = new Label();
             label2 = new Label();
             textBox1 = new TextBox();
@@ -41,9 +41,10 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            label7 = new Label();
             label8 = new Label();
             label9 = new Label();
+            label10 = new Label();
+            btnLoad = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -56,33 +57,35 @@
             dataGridView1.Size = new Size(776, 254);
             dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // btnEdit
             // 
-            button1.Location = new Point(335, 136);
-            button1.Name = "button1";
-            button1.Size = new Size(154, 42);
-            button1.TabIndex = 1;
-            button1.Text = "Edit";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnEdit.Location = new Point(213, 136);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(154, 42);
+            btnEdit.TabIndex = 1;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
-            // button2
+            // btnDelete
             // 
-            button2.Location = new Point(634, 136);
-            button2.Name = "button2";
-            button2.Size = new Size(154, 42);
-            button2.TabIndex = 2;
-            button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = true;
+            btnDelete.Location = new Point(634, 136);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(154, 42);
+            btnDelete.TabIndex = 2;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // button3
+            // btnInsert
             // 
-            button3.Location = new Point(12, 136);
-            button3.Name = "button3";
-            button3.Size = new Size(154, 42);
-            button3.TabIndex = 3;
-            button3.Text = "Insert";
-            button3.UseVisualStyleBackColor = true;
+            btnInsert.Location = new Point(12, 136);
+            btnInsert.Name = "btnInsert";
+            btnInsert.Size = new Size(154, 42);
+            btnInsert.TabIndex = 3;
+            btnInsert.Text = "Insert";
+            btnInsert.UseVisualStyleBackColor = true;
+            btnInsert.Click += btnInsert_Click;
             // 
             // label1
             // 
@@ -114,7 +117,6 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "HR", "ENG", "DEV", "PM", "FIN" });
             comboBox1.Location = new Point(127, 95);
-            comboBox1.MaxDropDownItems = 5;
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 7;
@@ -140,71 +142,76 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(612, 19);
+            label4.Location = new Point(634, 9);
             label4.Name = "label4";
             label4.Size = new Size(89, 15);
             label4.TabIndex = 10;
             label4.Text = "ID Departemen:";
-            label4.TextAlign = ContentAlignment.TopCenter;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(612, 37);
+            label5.Location = new Point(634, 61);
             label5.Name = "label5";
-            label5.Size = new Size(45, 15);
+            label5.Size = new Size(87, 15);
             label5.TabIndex = 11;
-            label5.Text = "HR: HR";
-            label5.TextAlign = ContentAlignment.TopCenter;
+            label5.Text = "DEV: Developer";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(612, 103);
+            label6.Location = new Point(634, 76);
             label6.Name = "label6";
-            label6.Size = new Size(72, 15);
+            label6.Size = new Size(123, 15);
             label6.TabIndex = 12;
-            label6.Text = "FIN: Finance";
-            label6.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(612, 86);
-            label7.Name = "label7";
-            label7.Size = new Size(123, 15);
-            label7.TabIndex = 13;
-            label7.Text = "PM: Product Manager";
-            label7.TextAlign = ContentAlignment.TopCenter;
+            label6.Text = "PM: Product Manager";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(612, 70);
+            label8.Location = new Point(634, 45);
             label8.Name = "label8";
-            label8.Size = new Size(87, 15);
+            label8.Size = new Size(82, 15);
             label8.TabIndex = 14;
-            label8.Text = "DEV: Developer";
-            label8.TextAlign = ContentAlignment.TopCenter;
+            label8.Text = "ENG: Engineer";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(612, 53);
+            label9.Location = new Point(634, 30);
             label9.Name = "label9";
-            label9.Size = new Size(82, 15);
+            label9.Size = new Size(45, 15);
             label9.TabIndex = 15;
-            label9.Text = "ENG: Engineer";
-            label9.TextAlign = ContentAlignment.TopCenter;
+            label9.Text = "HR: HR";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(634, 91);
+            label10.Name = "label10";
+            label10.Size = new Size(72, 15);
+            label10.TabIndex = 16;
+            label10.Text = "FIN: Finance";
+            // 
+            // btnLoad
+            // 
+            btnLoad.Location = new Point(419, 136);
+            btnLoad.Name = "btnLoad";
+            btnLoad.Size = new Size(154, 42);
+            btnLoad.TabIndex = 17;
+            btnLoad.Text = "Load";
+            btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += btnLoad_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnLoad);
+            Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
-            Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -214,9 +221,9 @@
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnInsert);
+            Controls.Add(btnDelete);
+            Controls.Add(btnEdit);
             Controls.Add(dataGridView1);
             Name = "Form1";
             Text = "Form1";
@@ -229,9 +236,9 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnEdit;
+        private Button btnDelete;
+        private Button btnInsert;
         private Label label1;
         private Label label2;
         private TextBox textBox1;
@@ -241,8 +248,9 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Label label7;
         private Label label8;
         private Label label9;
+        private Label label10;
+        private Button btnLoad;
     }
 }
