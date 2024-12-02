@@ -6,5 +6,10 @@ namespace _504570_Muhammad_Fachrizal_Giffari_ResponsiJuniorProject
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
